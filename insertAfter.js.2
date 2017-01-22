@@ -1,13 +1,9 @@
 function insertAfter(a,b){
- var o, p, t=b;
- if(p=t.parentNode){
+ var o, t=b, p=t.parentNode;
+ if(p!==null){
 	o=a;
-	if(o instanceof Node){
-		if(t=t.nextSibling){
-			p.insertBefore(o,t);
-		}else{
-			p.appendChild(o);
-		};
+	if((o instanceof Node)){
+		if((t=t.nextSibling)!==null){p.insertBefore(o,t);}else{p.appendChild(o);};
 	}else{
 		o=p.appendChild(document.createTextNode(String(o)));
 	};
